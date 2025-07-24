@@ -18,6 +18,7 @@ export function hasRole(userRole: Role, requiredRole: Role): boolean {
 
 export function hasPermission(userRole: Role, permission: string): boolean {
   const permissions = ROLE_PERMISSIONS[userRole];
+
   return permissions.includes("*") || permissions.includes(permission);
 }
 
