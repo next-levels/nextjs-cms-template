@@ -2,12 +2,12 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   entry: ["src/index.ts"],
-  format: ["cjs", "esm"],
+  format: ["esm"],
   dts: true,
   splitting: false,
   sourcemap: true,
   clean: true,
-  shims: true,
+  shims: false,
   target: "es2020",
   external: [
     "react",
@@ -20,4 +20,10 @@ export default defineConfig({
     "bcryptjs",
   ],
   tsconfig: "./tsconfig.json",
+  minify: false,
+  esbuildOptions(options) {
+    options.banner = {
+      js: '"use strict";',
+    };
+  },
 });

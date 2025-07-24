@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { type NavItem } from "../../types/nav";
 import { Icons } from "../icons";
-import { GlowingEffect } from "../ui/glowing-effect";
 import {
   Sidebar,
   SidebarContent,
@@ -42,14 +41,6 @@ function AppSidebar({ logo, title, adminLinks }: AppSidebarProps) {
 
   return (
     <Sidebar collapsible="icon">
-      <GlowingEffect
-        spread={40}
-        glow={true}
-        disabled={false}
-        proximity={64}
-        inactiveZone={0.01}
-      />
-
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -96,4 +87,4 @@ function AppSidebar({ logo, title, adminLinks }: AppSidebarProps) {
 
 AppSidebar.displayName = "AppSidebar";
 
-export default AppSidebar;
+export { AppSidebar };

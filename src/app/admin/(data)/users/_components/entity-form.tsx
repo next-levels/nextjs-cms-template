@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { userSchema } from "@mikestraczek/cms-auth";
-import { Form, FormActions, TextInput } from "@mikestraczek/cms-ui";
 import type { z } from "zod";
+import { FormActions, TextInput } from "~/components/form";
+import { Form } from "~/components/ui/form";
 
 type FormValues = z.infer<typeof userSchema>;
 

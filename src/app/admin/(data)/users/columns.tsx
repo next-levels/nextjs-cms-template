@@ -1,13 +1,15 @@
 "use client";
 
-import { type User } from "@mikestraczek/cms-auth";
+import { type User } from "~/lib/auth-types";
 import {
+  Badge,
   Button,
   DataTableColumnHeader,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@mikestraczek/cms-ui";
 import { type ColumnDef } from "@tanstack/react-table";

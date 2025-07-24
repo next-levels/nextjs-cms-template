@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-import { Button } from "../ui/button";
+import { Button } from "@mikestraczek/cms-ui";
 import { cn } from "@mikestraczek/cms-core";
 
 type FormActionsProps = {

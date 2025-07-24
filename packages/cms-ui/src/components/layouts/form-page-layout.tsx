@@ -1,5 +1,4 @@
 import { Card, CardHeader } from "../ui/card";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Icons } from "../icons";
@@ -31,17 +30,11 @@ function FormPageLayout({
         <div>
           {title && (
             <h1>
-              <TextGenerateEffect
-                className="text-3xl font-bold tracking-tight"
-                words={title}
-              />
+              <span className="text-3xl font-bold tracking-tight">{title}</span>
             </h1>
           )}
           {description && (
-            <TextGenerateEffect
-              className="text-muted-foreground"
-              words={description}
-            />
+            <p className="text-muted-foreground">{description}</p>
           )}
         </div>
       </div>

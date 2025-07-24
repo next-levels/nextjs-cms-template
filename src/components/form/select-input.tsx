@@ -13,12 +13,12 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@mikestraczek/cms-ui";
 
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@mikestraczek/cms-core";
-import { Button } from "../ui/button";
+import { Button } from "@mikestraczek/cms-ui";
 import {
   Command,
   CommandEmpty,
@@ -26,7 +26,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../ui/command";
+} from "@mikestraczek/cms-ui";
 
 export type SelectOption = {
   value: string;

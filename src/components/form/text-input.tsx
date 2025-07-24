@@ -1,5 +1,6 @@
 "use client";
 
+import { type HTMLAttributes } from "react";
 import {
   type Control,
   type FieldPath,
@@ -13,10 +14,10 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { Input } from "../ui/input";
+import { Input } from "@mikestraczek/cms-ui";
 import { cn } from "@mikestraczek/cms-core";
 
-type NumberInputProps<
+type TextInputProps<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 > = {
@@ -24,49 +25,36 @@ type NumberInputProps<
   name: TName;
   label: string;
   placeholder?: string;
-  min?: number;
-  max?: number;
-  minLength?: number;
-  maxLength?: number;
-  step?: number;
+  disabled?: boolean;
+  type?: "text" | "email" | "password" | "number" | "tel" | "url";
+  autoComplete?: string;
   className?: string;
   id?: string;
-};
+} & HTMLAttributes<HTMLInputElement>;
 
-export default function NumberInput<
+export default function TextInput<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   control,
   name,
   label,
-  placeholder,
-  min,
-  max,
-  minLength,
-  maxLength,
-  step,
   className,
   id,
-}: NumberInputProps<TFieldValues, TName>) {
+  ...props
+}: TextInputProps<TFieldValues, TName>) {
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel htmlFor={id}>{label}</FormLabel>
           <FormControl>
             <Input
               {...field}
+              {...props}
               id={id}
-              type="number"
-              placeholder={placeholder}
-              min={min}
-              max={max}
-              minLength={minLength}
-              maxLength={maxLength}
-              step={step}
               className={cn("", field.value && "border-input")}
             />
           </FormControl>

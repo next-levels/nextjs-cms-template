@@ -3,7 +3,20 @@
 import { useSession } from "next-auth/react";
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { Roles, type User } from "@mikestraczek/cms-auth";
+const Roles = {
+  USER: "USER",
+  ADMIN: "ADMIN",
+  SUPERADMIN: "SUPERADMIN",
+} as const;
+
+type User = {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
 
 interface AuthContextType {
   user: User | null;
