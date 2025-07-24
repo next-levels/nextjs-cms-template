@@ -1,6 +1,6 @@
 {
   "name": "@mikestraczek/cms-auth",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Authentication and user management for the CMS template",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
