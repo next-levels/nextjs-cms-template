@@ -20,15 +20,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-
-type NavItem = {
-  title: string;
-  url: string;
-  icon?: LucideIcon;
-  isActive?: boolean;
-  items?: NavItem[];
-  canAccess?: Role[];
-};
+import { type NavItem } from "../../types/nav";
 
 type NavMainProps = {
   items: NavItem[];

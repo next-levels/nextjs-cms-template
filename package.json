@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "A modular Next.js CMS template with authentication, admin panel, and reusable components",
-  "author": "Your Name",
+  "author": "Mike Straczek",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "next build",
+    "build:packages": "bun run --filter=\"packages/*\" build",
     "check": "next lint && tsc --noEmit",
     "db:generate": "prisma migrate dev",
     "db:migrate": "prisma migrate deploy",
@@ -20,7 +24,8 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "packages:publish": "bun run build:packages && changeset publish"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

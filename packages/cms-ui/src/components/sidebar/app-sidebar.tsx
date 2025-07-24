@@ -1,7 +1,9 @@
+import { Roles, useAuth } from "@mikestraczek/cms-auth";
 import Image from "next/image";
 import Link from "next/link";
-import { Roles, useAuth } from "@mikestraczek/cms-auth";
+import { type NavItem } from "../../types/nav";
 import { Icons } from "../icons";
+import { GlowingEffect } from "../ui/glowing-effect";
 import {
   Sidebar,
   SidebarContent,
@@ -11,25 +13,25 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "../ui/sidebar";
-import { GlowingEffect } from "../ui/glowing-effect";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 
-function AppSidebar() {
+type AppSidebarProps = {
+  logo?: string;
+  title?: string;
+  adminLinks?: NavItem[];
+};
+
+function AppSidebar({ logo, title, adminLinks }: AppSidebarProps) {
   const { user } = useAuth();
 
-  const adminLinks = [
+  const defaultLinks = [
     {
       title: "Dashboard",
       url: "/admin",
       icon: Icons.dashboard,
     },
-    {
-      title: "Bestellungen",
-      url: "/admin/orders",
-      icon: Icons.receipt,
-      canAccess: [Roles.SUPERADMIN, Roles.ADMIN],
-    },
+    ...(adminLinks ?? []),
     {
       title: "Benutzer",
       url: "/admin/users",
@@ -58,7 +60,7 @@ function AppSidebar() {
               >
                 <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <Image
-                    src={"/images/logo.svg"}
+                    src={logo ?? "/images/logo.svg"}
                     alt="logo"
                     width={50}
                     height={50}
@@ -67,7 +69,7 @@ function AppSidebar() {
                 </div>
 
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Greenchild</span>
+                  <span className="truncate font-medium">{title ?? "CMS"}</span>
                 </div>
               </SidebarMenuButton>
             </Link>
@@ -76,9 +78,11 @@ function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        <SidebarContent>
-          <NavMain items={adminLinks} />
-        </SidebarContent>
+        {adminLinks && (
+          <SidebarContent>
+            <NavMain items={defaultLinks} />
+          </SidebarContent>
+        )}
       </SidebarContent>
 
       {user && (

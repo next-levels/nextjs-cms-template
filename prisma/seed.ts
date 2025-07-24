@@ -11,7 +11,7 @@ async function main() {
   const superAdminUser = await db.user.create({
     data: {
       name: "Super Administrator",
-      email: "superadmin@template.de",
+      email: "superadmin@next-levels.de",
       password: hashedSuperAdminPassword,
       role: "SUPERADMIN",
       emailVerified: new Date(),
@@ -25,7 +25,7 @@ async function main() {
   const adminUser = await db.user.create({
     data: {
       name: "Template Admin",
-      email: "admin@template.de",
+      email: "admin@next-levels.de",
       password: hashedAdminPassword,
       role: "ADMIN",
       emailVerified: new Date(),
@@ -37,7 +37,7 @@ async function main() {
   const users = [
     {
       name: "Max Mustermann",
-      email: "user@template.de",
+      email: "user@next-levels.de",
       password: await bcrypt.hash("user123", 12),
       role: "USER" as const,
     },
@@ -55,9 +55,9 @@ async function main() {
 
   console.log("🎉 Seeding completed!");
   console.log("\n📝 Login credentials:");
-  console.log("SuperAdmin: superadmin@template.de / superadmin123");
-  console.log("Admin:      admin@template.de / admin123");
-  console.log("Users:      user@template.de / user123");
+  console.log("SuperAdmin: superadmin@next-levels.de / superadmin123");
+  console.log("Admin:      admin@next-levels.de / admin123");
+  console.log("Users:      user@next-levels.de / user123");
 }
 
 main()
