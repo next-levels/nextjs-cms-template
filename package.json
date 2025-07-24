@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "A modular Next.js CMS template with authentication, admin panel, and reusable components",
-  "author": "Your Name",
+  "author": "Mike Straczek",
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "build": "next build",
     "build:packages": "bun run --filter=\"packages/*\" build",
