@@ -4,11 +4,10 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
+import { AuthProvider } from "@mikestraczek/cms-auth";
+import { ThemeProvider, Toaster } from "@mikestraczek/cms-ui";
 import { SessionProvider } from "next-auth/react";
 import { TRPCReactProvider } from "~/trpc/react";
-import { AuthProvider } from "~/context/auth";
-import { ThemeProvider } from "~/components/provider/theme-provider";
-import { Toaster } from "~/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Admin Panel",

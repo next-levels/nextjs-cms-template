@@ -5,8 +5,7 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import { Button } from "~/components/ui/button";
-import { DataTable } from "~/components/ui/data-table";
+import { Button, DataTable } from "@mikestraczek/cms-ui";
 import { api } from "~/trpc/react";
 import { getColumns } from "./columns";
 

@@ -3,10 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
+import { userSchema } from "@mikestraczek/cms-auth";
+import { Form, FormActions, TextInput } from "@mikestraczek/cms-ui";
 import type { z } from "zod";
-import { Form } from "~/components/ui/form";
-import { TextInput, FormActions } from "~/components/form";
-import userSchema from "~/schema/user-schema";
 
 type FormValues = z.infer<typeof userSchema>;
 

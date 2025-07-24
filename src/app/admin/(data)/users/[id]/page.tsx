@@ -1,12 +1,10 @@
 "use client";
+import { type userSchema } from "@mikestraczek/cms-auth";
+import { Button, FormPageLayout, Icons } from "@mikestraczek/cms-ui";
 import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import { toast } from "sonner";
 import type { z } from "zod";
-import { Icons } from "~/components/icons";
-import FormPageLayout from "~/components/layouts/form-page-layout";
-import { Button } from "~/components/ui/button";
-import type userSchema from "~/schema/user-schema";
 import { api } from "~/trpc/react";
 import EntityForm from "../_components/entity-form";
 

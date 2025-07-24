@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { Roles, type User } from "~/types/user";
+import { Roles, type User } from "@mikestraczek/cms-auth";
 
 interface AuthContextType {
   user: User | null;

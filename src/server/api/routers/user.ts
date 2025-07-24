@@ -1,7 +1,12 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
-import { hashPassword } from "~/lib/auth";
+import {
+  userSchema,
+  hashPassword,
+  Roles,
+  type User,
+} from "@mikestraczek/cms-auth";
 import { sendPasswordResetEmail } from "~/lib/email";
 import {
   createPasswordResetToken,
@@ -9,13 +14,11 @@ import {
   markTokenAsUsed,
   validatePasswordResetToken,
 } from "~/lib/password-reset";
-import userSchema from "~/schema/user-schema";
 import {
   createTRPCRouter,
   protectedProcedure,
   publicProcedure,
 } from "~/server/api/trpc";
-import { Roles, type User } from "~/types/user";
 
 export const userRouter = createTRPCRouter({
   me: protectedProcedure.query(async ({ ctx }): Promise<User | null> => {

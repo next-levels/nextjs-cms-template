@@ -2,16 +2,15 @@
 
 import { redirect } from "next/navigation";
 
-import { ModeToggle } from "~/components/common/mode-toggle";
-import { Icons } from "~/components/icons";
-import AppSidebar from "~/components/sidebar/app-sidebar";
-import { Separator } from "~/components/ui/separator";
-import {
+import { useAuth } from "@mikestraczek/cms-auth";
+import AppSidebar, {
+  Icons,
+  ModeToggle,
+  Separator,
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "~/components/ui/sidebar";
-import { useAuth } from "~/context/auth";
+} from "@mikestraczek/cms-ui";
 
 export default function AdminLayout({
   children,

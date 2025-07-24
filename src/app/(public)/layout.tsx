@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "~/components/ui/button";
+import { Button } from "@mikestraczek/cms-ui";
+import { MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { MenuIcon, XIcon } from "lucide-react";
 
 export default function PublicLayout({
   children,

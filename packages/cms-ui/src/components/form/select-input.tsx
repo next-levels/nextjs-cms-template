@@ -1,6 +1,10 @@
 "use client";
 
-import type { Control, FieldPath, FieldValues } from "react-hook-form";
+import {
+  type Control,
+  type FieldPath,
+  type FieldValues,
+} from "react-hook-form";
 
 import {
   FormControl,
