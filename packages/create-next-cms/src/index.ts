@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { Command } from "commander";
 import chalk from "chalk";
 import inquirer from "inquirer";
@@ -22,7 +20,7 @@ const TEMPLATE_REPO = "https://github.com/next-levels/nextjs-cms-template.git";
 program
   .name("create-next-cms")
   .description("Create a new Next.js CMS project")
-  .version("1.0.1")
+  .version("1.0.0")
   .argument("[project-name]", "Name of the project")
   .option(
     "-p, --package-manager <pm>",
@@ -202,14 +200,13 @@ function showSuccessMessage(options: ProjectOptions) {
   console.log(chalk.bold("🔗 Nützliche Links:\n"));
   console.log(chalk.blue("   🌐 http://localhost:3000"));
   console.log(chalk.blue("   ⚙️  http://localhost:3000/admin"));
-  console.log(chalk.blue("   📊 http://localhost:5555 (Prisma Studio)\n"));
 
   console.log(
     chalk.gray("💡 Tipp: Bearbeite die .env Datei für deine Umgebung"),
   );
   console.log(
     chalk.gray(
-      "📖 Dokumentation: https://github.com/mikestraczek/nextjs-cms-template\n",
+      "📖 Dokumentation: https://github.com/next-levels/nextjs-cms-template\n",
     ),
   );
 }
