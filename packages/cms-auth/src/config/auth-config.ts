@@ -1,4 +1,4 @@
-import { type Role } from "@mikestraczek/cms-core";
+import { type Role } from "../types/user";
 import bcrypt from "bcryptjs";
 import type { DefaultSession, NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
