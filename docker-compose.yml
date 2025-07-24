@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: greenchild-mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    environment:
+      - MH_STORAGE=maildir
+      - MH_MAILDIR_PATH=/tmp
+    volumes:
+      - mailhog-data:/tmp
+    restart: unless-stopped
+    networks:
+      - greenchild-network
+
+volumes:
+  mailhog-data:
+    driver: local
+
+networks:
+  greenchild-network:
+    driver: bridge

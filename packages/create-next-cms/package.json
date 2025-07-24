@@ -1,0 +1,45 @@
+{
+  "name": "create-next-cms",
+  "version": "1.0.0",
+  "description": "CLI tool to create new Next.js CMS projects",
+  "main": "dist/index.js",
+  "bin": {
+    "create-next-cms": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "nextjs",
+    "cms",
+    "template",
+    "cli",
+    "create"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "dependencies": {
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0",
+    "fs-extra": "^11.2.0",
+    "validate-npm-package-name": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.0",
+    "@types/inquirer": "^9.0.0",
+    "@types/validate-npm-package-name": "^4.0.0",
+    "eslint": "^9.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}

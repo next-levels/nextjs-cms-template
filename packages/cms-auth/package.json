@@ -1,0 +1,49 @@
+{
+  "name": "@cms-template/auth",
+  "version": "1.0.0",
+  "description": "Authentication and user management for the CMS template",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "cms",
+    "auth",
+    "nextauth",
+    "authentication"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "peerDependencies": {
+    "next": "^15.0.0",
+    "next-auth": "^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "@cms-template/core": "^1.0.0",
+    "@prisma/client": "^6.0.0",
+    "zod": "^3.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "eslint": "^9.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "@types/bcryptjs": "^2.4.0"
+  }
+}
