@@ -16,4 +16,5 @@ export default defineConfig({
     "zod",
     "bcryptjs",
   ],
+  tsconfig: "./tsconfig.json",
 });

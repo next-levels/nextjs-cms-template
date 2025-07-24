@@ -1,7 +1,7 @@
+import { type Role } from "@mikestraczek/cms-core";
+import bcrypt from "bcryptjs";
 import type { DefaultSession, NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import { Roles, type Role } from "@cms-template/core";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
