@@ -1,6 +1,6 @@
 {
   "name": "@mikestraczek/cms-core",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Core utilities and types for the CMS template",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,8 +24,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "publishConfig": {

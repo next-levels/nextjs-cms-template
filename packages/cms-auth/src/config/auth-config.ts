@@ -2,6 +2,7 @@ import { type Role } from "../types/user";
 import bcrypt from "bcryptjs";
 import type { DefaultSession, NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { type PrismaClient } from "@prisma/client";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -30,7 +31,7 @@ declare module "next-auth" {
 }
 
 export function createAuthConfig(
-  db: any,
+  db: PrismaClient,
   env: { AUTH_SECRET: string },
 ): NextAuthConfig {
   return {
