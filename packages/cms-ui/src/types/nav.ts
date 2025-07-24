@@ -1,7 +1,7 @@
-import { LucideIcon } from "lucide-react";
-import { Role } from "@mikestraczek/cms-auth";
+import { type LucideIcon } from "lucide-react";
+import { type Role } from "@mikestraczek/cms-auth";
 
-type NavItem = {
+export type NavItem = {
   title: string;
   url: string;
   icon?: LucideIcon;
@@ -9,5 +9,3 @@ type NavItem = {
   items?: NavItem[];
   canAccess?: Role[];
 };
-
-export { type NavItem };

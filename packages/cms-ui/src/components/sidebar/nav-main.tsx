@@ -1,11 +1,18 @@
 "use client";
 
-import { MoreHorizontal, type LucideIcon } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { useMemo } from "react";
 import { useAuth, type Role } from "@mikestraczek/cms-auth";
+import { useMemo } from "react";
+import { type NavItem as NavItemType } from "../../types/nav";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -14,16 +21,9 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "../ui/sidebar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { type NavItem } from "../../types/nav";
 
 type NavMainProps = {
-  items: NavItem[];
+  items: NavItemType[];
 };
 
 export function NavMain({ items }: NavMainProps) {
@@ -48,7 +48,7 @@ export function NavMain({ items }: NavMainProps) {
 }
 
 type NavItemProps = {
-  item: NavItem;
+  item: NavItemType;
   canAccess?: Role[];
   userRole?: Role;
 };
